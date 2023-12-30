@@ -12,8 +12,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from textblob import TextBlob
 
-yandex_data = pd.read_excel('chatgpt_translate.xlsx')
-knidos_data = pd.read_excel('hotel_reviews.xlsx')
+yandex_data = pd.read_excel('file patch')
+knidos_data = pd.read_excel('file patch')
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -65,6 +65,6 @@ for classifier_name, classifier in classifiers.items():
 
     results = pd.concat([results, knidos_data[['hotel_review', 'Clear_Review', 'TextBlob_Sentiment', f'{classifier_name}_Model_Sentiment']]], axis=1)
 
-output_file = 'chatgpt_new_sentiment_analysis_results.xlsx'
+output_file = 'file_name.xlsx'
 with pd.ExcelWriter(output_file) as writer:
-    results.to_excel(writer, sheet_name='Chatgpt_New_Sentiment_Analysis_Results', index=False)
+    results.to_excel(writer, sheet_name='file name', index=False)
